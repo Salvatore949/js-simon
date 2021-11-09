@@ -5,6 +5,7 @@
 // Uso setTimeout per impostare il conto alla rovescia
 // Dopo 30 secondi l’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
 // Creare un ciclo for
+// All'interno del for uso il prompt per chiedere di inserire i numeri visti in precedenza
 // All'interno del ciclo inserisco il prompt
 //  
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
@@ -22,6 +23,8 @@ console.log(random_names)
 setTimeout(miaFunzione, 30*1000);
 
 function miaFunzione(){
-
+for ( i = 0; i < 5; i++ ){
+  let numbers = parseInt(prompt("Inserisci i numeri"));
+ }
 }
 
