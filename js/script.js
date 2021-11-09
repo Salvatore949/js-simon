@@ -19,6 +19,9 @@ for ( i = 0; i < 5; i++ ){
 
 console.log(random_names)
 
-const cont_down = 
+setTimeout(miaFunzione, 30*1000);
 
-setTimeout
+function miaFunzione(){
+
+}
+
