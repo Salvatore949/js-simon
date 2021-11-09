@@ -1,30 +1,47 @@
 // Visualizzare in pagina 5 numeri casuali.
-//Creare un array vuoto
-//Riempire l'array con numeri casuali attravero Math.random 
-// Da lì parte un timer di 30 secondi.
+// Creare un array vuoto
+// Riempire l'array con numeri casuali attravero Math.random 
+// Stampo i numeri
+// Da quì parte un timer di 30 secondi.
 // Uso setTimeout per impostare il conto alla rovescia
-// Dopo 30 secondi l’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
+// Cancello i numeri da imparare
 // Creare un ciclo for
 // All'interno del for uso il prompt per chiedere di inserire i numeri visti in precedenza
 // All'interno del ciclo inserisco il prompt
-//  
-// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+// Creo una condizione per verificare che i numeri inseriri corrispondano a quelli generati Dal random
+// Stampo il risultato
+
 const elemento = document.getElementById("container")
 
-var random_names = []
+var numbers = []
+var users = [];
 
 for ( i = 0; i < 5; i++ ){
-     let remind = Math.floor(Math.random() * 5) + 1;
-     random_names.push(remind);
+     let remind = Math.floor(Math.random() * 100) + 1;
+     numbers.push(remind);
 }
 
-console.log(random_names)
+document.querySelector("#num_guess").innerHTML=" I numeri che devi ricordare :" + numbers;
+console.log(numbers)
 
-setTimeout(miaFunzione, 30*1000);
+setTimeout(miaFunzione, 3 * 3000);
 
-function miaFunzione(){
-for ( i = 0; i < 5; i++ ){
-  let numbers = parseInt(prompt("Inserisci i numeri"));
- }
+function miaFunzione() {
+    document.querySelector("#num_guess").innerHTML = "";
+    let beccati = "Beccati: ";
+    let num_beccati = 0;
+    for ( i = 0; i < 5; i++ ){
+        let num = parseInt(prompt("Inserisci i numeri"));
+        users.push(num);
+        
+        if (numbers.includes(num)) {
+            console.log('numero indovinato');
+            beccati += num + ",";
+            num_beccati++;
+        }
+    }
+
+    document.querySelector("#num_beccati").innerHTML = beccati + "<br>" + "Totale beccati: " + num_beccati;
+
 }
 
